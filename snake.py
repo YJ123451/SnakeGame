@@ -19,6 +19,12 @@ class Snake(Turtle):
             tim.color("white")
             tim.goto((-20*i),0)
             self.turtles.append(tim)
+    def grow(self):
+        new_snake = Turtle("square")
+        new_snake.color("white")
+        new_snake.penup()
+        new_snake.goto(self.turtles[-1].xcor(),self.turtles[-1].ycor())
+        self.turtles.append(new_snake)
     #move snake
     def move(self):
         for turtle in range(len(self.turtles) - 1, 0, -1):
